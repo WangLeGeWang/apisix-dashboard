@@ -23,6 +23,7 @@ import { useTranslation } from 'react-i18next';
 import { getUpstreamListQueryOptions, useUpstreamList } from '@/apis/hooks';
 import { CopyableId } from '@/components/page/CopyableId';
 import { DeleteResourceBtn } from '@/components/page/DeleteResourceBtn';
+import { ListEmptyState } from '@/components/page/ListEmptyState';
 import PageHeader from '@/components/page/PageHeader';
 import { ToAddPageBtn, ToDetailPageBtn } from '@/components/page/ToAddPageBtn';
 import { AntdConfigProvider } from '@/config/antdConfigProvider';
@@ -96,6 +97,9 @@ function RouteComponent() {
       <PageHeader title={t('sources.upstreams')} />
       <AntdConfigProvider>
         <ProTable
+          locale={{
+            emptyText: <ListEmptyState resource="upstreams" />,
+          }}
           columns={columns}
           dataSource={data?.list}
           rowKey="id"

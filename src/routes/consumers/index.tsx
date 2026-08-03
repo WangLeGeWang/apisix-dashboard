@@ -23,6 +23,7 @@ import { useTranslation } from 'react-i18next';
 import { getConsumerListQueryOptions, useConsumerList } from '@/apis/hooks';
 import { CopyableId } from '@/components/page/CopyableId';
 import { DeleteResourceBtn } from '@/components/page/DeleteResourceBtn';
+import { ListEmptyState } from '@/components/page/ListEmptyState';
 import PageHeader from '@/components/page/PageHeader';
 import { ToAddPageBtn, ToDetailPageBtn } from '@/components/page/ToAddPageBtn';
 import { AntdConfigProvider } from '@/config/antdConfigProvider';
@@ -87,6 +88,9 @@ function ConsumersList() {
   return (
     <AntdConfigProvider>
       <ProTable
+        locale={{
+          emptyText: <ListEmptyState resource="consumers" />,
+        }}
         columns={columns}
         dataSource={data.list}
         rowKey="username"

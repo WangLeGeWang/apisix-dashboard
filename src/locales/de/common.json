@@ -13,6 +13,9 @@
     "singular": "Anmeldeinformation"
   },
   "docs": "Dokumentation",
+  "empty": {
+    "description": "Noch keine {{name}}"
+  },
   "form": {
     "basic": {
       "desc": "Beschreibung",
@@ -348,8 +351,7 @@
     "singular": "Secret"
   },
   "services": {
-    "singular": "Service",
-    "empty": "Keine Services gefunden. Klicken Sie auf Service hinzufügen, um Ihren ersten zu erstellen."
+    "singular": "Service"
   },
   "settings": {
     "adminKey": "Admin Key",

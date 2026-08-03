@@ -24,6 +24,7 @@ import { getRouteListQueryOptions, useRouteList } from '@/apis/hooks';
 import type { WithServiceIdFilter } from '@/apis/routes';
 import { CopyableId } from '@/components/page/CopyableId';
 import { DeleteResourceBtn } from '@/components/page/DeleteResourceBtn';
+import { ListEmptyState } from '@/components/page/ListEmptyState';
 import PageHeader from '@/components/page/PageHeader';
 import { ToAddPageBtn, ToDetailPageBtn } from '@/components/page/ToAddPageBtn';
 import { AntdConfigProvider } from '@/config/antdConfigProvider';
@@ -98,6 +99,9 @@ export const RouteList = (props: RouteListProps) => {
   return (
     <AntdConfigProvider>
       <ProTable
+        locale={{
+          emptyText: <ListEmptyState resource="routes" />,
+        }}
         columns={columns}
         dataSource={data.list}
         rowKey="id"
